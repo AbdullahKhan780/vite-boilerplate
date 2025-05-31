@@ -54,7 +54,7 @@ cd vite-boilerplate
 
 # 2. Install dependencies (choose one)
 
-```
+```js
 pnpm i
 # or
 npm i
@@ -100,7 +100,7 @@ Global styles live in ```src/index.css```
 
 Update the colour palette or plugin list in tailwind.config.ts, then restart the dev server.
 
-```
+```ts
 i18n
 
 Translation resources are colocated by namespace under public/locales/<lng>/<ns>.json.
@@ -122,7 +122,7 @@ Add a new language by creating a folder and JSON files, then push them to your t
 
 URL state with nuqs
 
-```
+```tsx
 import { useQueryState, parseAsString } from 'nuqs';
 
 const [search, setSearch] = useQueryState(
