@@ -26,7 +26,7 @@ High‑velocity starter template for building modern single‑page applications 
 
 📂 Project structure
 
-.
+```bash
 ├── public/               # Static assets (favicon.svg, robots.txt, etc.)
 │   ├── locals/           # translation files (default en and ar)
 ├── src/
@@ -34,13 +34,15 @@ High‑velocity starter template for building modern single‑page applications 
 │   ├── components/       # Shared UI primitives
 │   ├── hooks/            # Reusable hooks
 │   ├── pages/            # Route modules used by React Router
-│   ├── router/           # createBrowserRouter definition
+│   ├── routes/           # createBrowserRouter definition
 │   ├── types/            # Global TypeScript declarations
 │   └── main.tsx          # App entry point
 ├── .vscode/              # Recommended editor settings & tasks
 ├── index.html
+├── biome.json
 ├── vite.config.ts
 └── package.json
+```
 
 Feel free to adapt the layout to your team’s conventions.
 
