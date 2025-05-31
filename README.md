@@ -6,7 +6,7 @@ High‑velocity starter template for building modern single‑page applications 
 
 ⚡ Vite 5 – instant dev server, HMR & optimized builds
 
-⚛ React 18 configured in strict‑mode
+⚛ React 18 configured in strict mode
 
 🗺 React Router v7 – declarative routing with SSR‑ready data APIs and “framework mode” enhancements (reactrouter.com)
 
@@ -20,9 +20,9 @@ High‑velocity starter template for building modern single‑page applications 
 
 ✅ Vitest + React Testing Library + optional Cypress e2e
 
-🐙 Husky & lint‑staged for automated code quality gates
+🐙 Biome for linting, formattin,g and for automated code quality gates
 
-🚀 Ready‑to‑deploy configs for Vercel, Netlify & GitHub Pages
+🚀 Ready‑to‑deploy configs for Vercel, Netlif,y & GitHub Pages
 
 📂 Project structure
 
