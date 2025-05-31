@@ -1,54 +1,179 @@
-# React + TypeScript + Vite
+Vite + React Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+High‑velocity starter template for building modern single‑page applications with React 18, powered by Vite 5 and a curated stack of production‑ready tooling.
 
-Currently, two official plugins are available:
+✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚡ Vite 5 – instant dev server, HMR & optimized builds
 
-## Expanding the ESLint configuration
+⚛ React 18 configured in strict‑mode
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🗺 React Router v7 – declarative routing with SSR‑ready data APIs and “framework mode” enhancements (reactrouter.com)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+🎨 Tailwind CSS v3 pre‑configured with JIT, dark‑mode class strategy & @apply helpers
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🌐 i18next + react‑i18next – locale detection, lazy‑loaded namespaces & TypeScript‑safe hooks
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🔗 nuqs – type‑safe URL search‑param state that syncs with React like useState (nuqs.47ng.com)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+🧹 Opinionated tooling: ESLint (Airbnb + React Hooks + TailwindCSS), Prettier, TypeScript strict mode
+
+✅ Vitest + React Testing Library + optional Cypress e2e
+
+🐙 Husky & lint‑staged for automated code quality gates
+
+🚀 Ready‑to‑deploy configs for Vercel, Netlify & GitHub Pages
+
+📂 Project structure
+
+.
+├── public/               # Static assets (favicon.svg, robots.txt, etc.)
+│   ├── locals/           # translation files (default en and ar)
+├── src/
+│   ├── assets/           # Images & static imports
+│   ├── components/       # Shared UI primitives
+│   ├── hooks/            # Reusable hooks
+│   ├── pages/            # Route modules used by React Router
+│   ├── router/           # createBrowserRouter definition
+│   ├── types/            # Global TypeScript declarations
+│   └── main.tsx          # App entry point
+├── .vscode/              # Recommended editor settings & tasks
+├── index.html
+├── vite.config.ts
+└── package.json
+
+Feel free to adapt the layout to your team’s conventions.
+
+🚀 Quick start
+
+# 1. Clone the repo
+git clone https://github.com/<your‑org>/<your‑repo>.git
+cd <your‑repo>
+
+# 2. Install dependencies (choose one)
+pnpm i
+# or
+npm i
+# or
+yarn
+
+# 3. Start dev server
+pnpm dev
+
+Open http://localhost:5173 and start shipping!
+
+Available scripts
+
+Script
+
+Description
+
+dev
+
+Start Vite dev server with HMR
+
+build
+
+Create a production build in dist/
+
+preview
+
+Preview the production build locally
+
+lint
+
+Run ESLint + TypeScript type‑check
+
+format
+
+Format all source files with Prettier
+
+test
+
+Execute unit tests with Vitest
+
+test:coverage
+
+Run tests and generate coverage report
+
+prepare
+
+Install Husky Git hooks
+
+🛠 Configuration hints
+
+Tailwind
+
+Global styles live in src/styles/tailwind.css.
+
+Update the colour palette or plugin list in tailwind.config.ts, then restart the dev server.
+
+i18n
+
+Translation resources are colocated by namespace under src/i18n/locales/<lng>/<ns>.json.
+
+// src/i18n/index.ts
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'en',
+    ns: ['common'],
+    defaultNS: 'common',
+    resources: {/* ... */}
+  })
+
+Add a new language by creating a folder and JSON files, then push them to your translation workflow.
+
+URL state with nuqs
+
+import { useQueryState, parseAsString } from 'nuqs';
+
+const [search, setSearch] = useQueryState(
+  'q',
+  parseAsString.withDefault('')
+);
+
+The value now persists in and syncs with ?q= in the URL while remaining type‑safe. (nuqs.47ng.com)
+
+🧩 Extending the template
+
+Task
+
+File(s) / Notes
+
+Add an env variable
+
+.env.*, accessed via import.meta.env
+
+Enable SSR/hydration
+
+Wrap routes with createStaticRouter or adopt the Remix compiler from React Router v7 framework mode (reactrouter.com)
+
+Switch CSS framework
+
+Remove Tailwind deps, delete styles/ & update PostCSS config
+
+Deploy to Vercel
+
+Push to GitHub then click New Project in the Vercel dashboard
+
+🤝 Contributing
+
+Fork the repository
+
+Create your feature branch: git checkout -b feat/amazing‑feature
+
+Commit your changes: pnpm cz for guided Conventional Commits
+
+Push to the branch: git push origin feat/amazing‑feature
+
+Open a Pull Request
+
+Commit style
+
+The project enforces Conventional Commits via commitlint & Husky.
+
+📜 License
+
+Distributed under the MIT License. See LICENSE for more information.
