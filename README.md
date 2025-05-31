@@ -49,15 +49,19 @@ Feel free to adapt the layout to your team’s conventions.
 🚀 Quick start
 
 # 1. Clone the repo
-git clone https://github.com/<your‑org>/<your‑repo>.git
-cd <your‑repo>
+git clone https://github.com/AbdullahKhan780/vite-boilerplate.git
+cd vite-boilerplate
 
 # 2. Install dependencies (choose one)
+
+```
 pnpm i
 # or
 npm i
 # or
 yarn
+
+```
 
 # 3. Start dev server
 pnpm dev
@@ -78,18 +82,6 @@ build
 
 Create a production build in dist/
 
-preview
-
-Preview the production build locally
-
-lint
-
-Run ESLint + TypeScript type‑check
-
-format
-
-Format all source files with Prettier
-
 test
 
 Execute unit tests with Vitest
@@ -100,19 +92,18 @@ Run tests and generate coverage report
 
 prepare
 
-Install Husky Git hooks
-
 🛠 Configuration hints
 
 Tailwind
 
-Global styles live in src/styles/tailwind.css.
+Global styles live in ```src/index.css```
 
 Update the colour palette or plugin list in tailwind.config.ts, then restart the dev server.
 
+```
 i18n
 
-Translation resources are colocated by namespace under src/i18n/locales/<lng>/<ns>.json.
+Translation resources are colocated by namespace under public/locales/<lng>/<ns>.json.
 
 // src/i18n/index.ts
 i18n
@@ -125,10 +116,13 @@ i18n
     resources: {/* ... */}
   })
 
+```
+
 Add a new language by creating a folder and JSON files, then push them to your translation workflow.
 
 URL state with nuqs
 
+```
 import { useQueryState, parseAsString } from 'nuqs';
 
 const [search, setSearch] = useQueryState(
@@ -136,25 +130,9 @@ const [search, setSearch] = useQueryState(
   parseAsString.withDefault('')
 );
 
+```
+
 The value now persists in and syncs with ?q= in the URL while remaining type‑safe. (nuqs.47ng.com)
-
-🧩 Extending the template
-
-Task
-
-File(s) / Notes
-
-Add an env variable
-
-.env.*, accessed via import.meta.env
-
-Enable SSR/hydration
-
-Wrap routes with createStaticRouter or adopt the Remix compiler from React Router v7 framework mode (reactrouter.com)
-
-Switch CSS framework
-
-Remove Tailwind deps, delete styles/ & update PostCSS config
 
 Deploy to Vercel
 
@@ -173,8 +151,6 @@ Push to the branch: git push origin feat/amazing‑feature
 Open a Pull Request
 
 Commit style
-
-The project enforces Conventional Commits via commitlint & Husky.
 
 📜 License
 
