@@ -1,8 +1,20 @@
 {
-  "name": "vite-boilerplate",
+  "name": "darbassabil-homepage",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "appLinks": {
+    "playstore": "https://play.google.com/store/apps/details?id=com.sabil.app",
+    "appstore": "https://apps.apple.com/pl/app/2-0-درب-السبيل/id6499503535"
+  },
+  "support": {
+    "whatsapp": "https://api.whatsapp.com/send/?phone=218914665599&text&type=phone_number",
+    "facebook": "https://www.facebook.com/DSabilLY"
+  },
+  "partners": {
+    "huruftech": "https://huruftech.com",
+    "oridune": "https://oridune.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -10,14 +22,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.8",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
     "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^8.1.0",
     "nuqs": "^2.4.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-fast-marquee": "^1.6.5",
     "react-i18next": "^15.5.2",
     "react-router": "^7.6.1",
+    "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {

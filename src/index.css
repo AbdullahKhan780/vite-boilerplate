@@ -1,1 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+	--font-display: "IBM Plex Sans Arabic", "sans-serif";
+	--font-noto: "Noto Sans Arabic", sans-serif;
+	--color-primary: oklch(57.33% 0.235 29);
+	--color-secondary: oklch(0% 0 0);
+
+	--animate-marquee: marquee 12s linear infinite;
+	--animate-textMarquee: textMarquee 12s linear infinite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p,
+span,
+small {
+	font-family: var(--font-display);
+}
+
+body {
+	font-family: var(--font-display);
+	overscroll-behavior: none;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes textMarquee {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
